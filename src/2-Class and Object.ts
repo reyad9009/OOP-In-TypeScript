@@ -1,3 +1,17 @@
-interface Employee{
-    name: string
+class Employee {
+  name: string;
+  baseSalary: number;
+
+  constructor(name: string, baseSalary: number) {
+    this.name = name;
+    this.baseSalary = baseSalary;
+  }
 }
+
+const employee = new Employee("Tarek", 1871);
+const employee2 = new Employee("Rahman", 3000);
+
+console.log(employee);
+console.log(employee2);
+console.log(employee2 instanceof Employee);
+ 

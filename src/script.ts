@@ -1,1 +1,1 @@
-import "./2-Class and Object.js"
+import "./3-Encapsulation.js"

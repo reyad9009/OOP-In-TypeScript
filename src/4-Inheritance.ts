@@ -3,3 +3,36 @@
 //* অর্থাৎ, একটি Parent Class-এর বৈশিষ্ট্য অন্য একটি Child Class গ্রহণ করতে পারে।
 
 //* এর ফলে একই Code বারবার লিখতে হয় না।
+
+class Employee {
+  constructor(
+    public name: string,
+    private _baseSalary: number,
+  ) {}
+
+  get baseSalary(): number {
+    return this._baseSalary;
+  }
+
+  set baseSalary(newSalary: number) {
+    if (newSalary < 0) {
+      throw new Error("salary cannot be negative value");
+    }
+    this._baseSalary = newSalary;
+  }
+  describe(): string {
+    return `${this.name} earns ${this.baseSalary}`;
+  }
+}
+class Manager extends Employee {
+  teamMemberCount: number;
+  constructor(name: string, _baseSalary: number, teamMemberCount: number) {
+    super(name, _baseSalary);
+    this.teamMemberCount = teamMemberCount;
+  }
+}
+const employee = new Employee("Tarek", 123);
+const manager = new Manager("Mizan", 2400, 20)
+
+console.log(employee);
+console.log(manager);

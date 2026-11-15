@@ -1,1 +1,1 @@
-import "./3-Encapsulation.js"
+import "./4-Inheritance.js"

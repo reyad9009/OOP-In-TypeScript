@@ -21,18 +21,28 @@ class Employee {
     this._baseSalary = newSalary;
   }
   describe(): string {
-    return `${this.name} earns ${this.baseSalary}`;
+    return `${this.name} earns ${this.baseSalary} $`;
   }
 }
 class Manager extends Employee {
-  teamMemberCount: number;
-  constructor(name: string, _baseSalary: number, teamMemberCount: number) {
+  //   teamMemberCount: number;
+  //   constructor(name: string, _baseSalary: number, teamMemberCount: number) {
+  //     super(name, _baseSalary);
+  //     this.teamMemberCount = teamMemberCount;
+  //   }
+  constructor(
+    name: string,
+    _baseSalary: number,
+    public teamMemberCount: number,
+  ) {
     super(name, _baseSalary);
-    this.teamMemberCount = teamMemberCount;
+  }
+  describeWork(): string {
+    return `${this.name} manages ${this.teamMemberCount} people `;
   }
 }
 const employee = new Employee("Tarek", 123);
-const manager = new Manager("Mizan", 2400, 20)
+console.log(employee.describe())
 
-console.log(employee);
-console.log(manager);
+const manager = new Manager("Mizan", 2400, 20);
+console.log(manager.describeWork());

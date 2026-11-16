@@ -1,1 +1,1 @@
-import "./4-Inheritance.js"
+import "./5-Inheritance continued.js"

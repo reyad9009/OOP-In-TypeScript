@@ -36,7 +36,7 @@ class Manager extends Employee {
     public teamMemberCount: number,
   ) {
     super(name, _baseSalary);
-  }
+  } 
   describeWork(): string {
     return `${this.name} manages ${this.teamMemberCount} people `;
   }

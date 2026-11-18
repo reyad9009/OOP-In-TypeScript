@@ -16,6 +16,7 @@ class Input extends UIElement {
     return `<input id="${this.id}" type="${this.type}" name="${this.id}" placeholder="${this.placeholder}"/>`;
   }
 }
+
 class Button extends UIElement {
   constructor(
     id: string,
@@ -44,3 +45,14 @@ class Form extends UIElement {
     return `<form id="${this.id}" style="border: 1px solid #ccc; padding: 20px; display: flex; flex-direction: column; max-width:300px; border-radius:10px; gap:5px;">\n ${childrenHTML} \n</form>`;
   }
 }
+
+const formElement = new Form("login-form");
+
+const nameInput = new Input("name", "text", "Enter your name");
+const emailInput = new Input("email", "email", "Enter your email");
+
+formElement.appendChild(nameInput);
+formElement.appendChild(emailInput);
+
+
+console.log(formElement.render());

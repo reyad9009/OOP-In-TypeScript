@@ -50,9 +50,18 @@ const formElement = new Form("login-form");
 
 const nameInput = new Input("name", "text", "Enter your name");
 const emailInput = new Input("email", "email", "Enter your email");
+const passwordInput = new Input("pass", "password", "Enter your password");
+const submitButton = new Button("submit-btn", "Submit");
 
 formElement.appendChild(nameInput);
 formElement.appendChild(emailInput);
-
+formElement.appendChild(passwordInput);
+formElement.appendChild(submitButton);
 
 console.log(formElement.render());
+
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  rootElement.innerHTML = formElement.render();
+}

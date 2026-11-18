@@ -16,3 +16,31 @@ class Input extends UIElement {
     return `<input id="${this.id}" type="${this.type}" name="${this.id}" placeholder="${this.placeholder}"/>`;
   }
 }
+class Button extends UIElement {
+  constructor(
+    id: string,
+    private label: string,
+  ) {
+    super(id);
+  }
+
+  render() {
+    return `<button id="${this.id}">${this.label}</button>`;
+  }
+}
+
+class Form extends UIElement {
+  private children: UIElement[] = [];
+
+  appendChild(child: UIElement) {
+    this.children.push(child);
+  }
+
+  render() {
+    const childrenHTML = this.children
+      .map((child) => child.render())
+      .join("\n ");
+
+    return `<form id="${this.id}" style="border: 1px solid #ccc; padding: 20px; display: flex; flex-direction: column; max-width:300px; border-radius:10px; gap:5px;">\n ${childrenHTML} \n</form>`;
+  }
+}
